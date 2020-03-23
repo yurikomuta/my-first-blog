@@ -9,14 +9,16 @@
 
 <body>
     <div>
-        <h1><a href="http://">Blog Django Girls</a></h1>
+        <h1><a href="/">Django Girls Blog</a></h1>
     </div>
 
+    {% for post in posts %}
     <div>
-        <p>Publicado: 21.03.2020, 15:32</p>
-        <h2><a href="http://">Primeiro Post</a> </h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Aliquid ipsam amet a veniam fuga! Voluptatem quidem asperiores iste dolores sint fugit esse qui veritatis aspernatur. Labore voluptas amet maxime repellat.</p>
+        <p>published: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
     </div>
+    {% endfor %}
 
     <div>
         <p>Publicado: 21.03.2020, 15:33</p>
